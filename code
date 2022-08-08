@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class GuessingGameAPP
+{
+    public static void main(String[] args)
+    {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please Enter an Integer Variable Between 1 and 1000");
+        Random randomGen = new Random();
+         int x = randomGen.nextInt(1000) + 1;
+         int userNum = console.nextInt();
+         boolean flag = true;
+         int y = 6;
+         while( userNum != x && y != 0 && flag)
+         {
+             System.out.print("Sorry not quite! You have " + y + " more tries!");
+             flag = false;
+
+         }
+         
+         y = y - 1;
+         
+         while( userNum == x && flag)
+         {
+            System.out.print("You Guessed It! Great Job!!!!");
+            flag = false;
+         }
+
+         while (userNum != x && y == 0 && flag)
+         {
+            System.out.print("Sorry You're Out of Tries, Better Luck Next Time!");
+            flag = false; 
+        }
+    }
+}
